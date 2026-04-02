@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teemex Design | Timileyin Moses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="cursor"></div>
+    <div class="noise"></div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">
+            <img src="/static/Teemexlogo.png" alt="Teemex Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <div class="available-badge">✦ Available for work</div>
+            <h2>Building Modern,<br><span>High-Performance</span><br>Web Experiences.</h2>
+            <p class="hero-sub" id="bio-data">Loading...</p>
+            <div class="hero-cta">
+                <a href="https://www.behance.net/timileyinmoses_157" target="_blank" class="btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn-ghost">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="profile-wrap">
+                <img src="/static/Teemexdp.png" alt="Timileyin Moses" class="profile-img">
+                <div class="profile-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="section-label">About Me</div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Crafting Digital <span>Experiences</span></h2>
+                <p>I'm an experienced customer service and telesales professional with years of experience in ecommerce, fintech and technology. Skilled in CMS platforms including WordPress, Shopify, Drupal and Concrete5, I combine creative vision with technical prowess to deliver compelling digital experiences.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <span class="stat-num">3+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">10+</span>
+                    <span class="stat-label">Projects Done</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">5+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+        <div class="section-label">Projects</div>
+        <h2 class="section-title">Selected <span>Work</span></h2>
+        <div id="projects-list" class="projects-grid">Loading...</div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+        <div class="section-label">Skills</div>
+        <h2 class="section-title">What I <span>Do</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>CMS Development</h3>
+                <p>WordPress, Shopify, Drupal, Concrete5</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3>Graphics Design</h3>
+                <p>Adobe Photoshop, Canva, Poster Design</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, Golang</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🛠️</div>
+                <h3>IT Support</h3>
+                <p>Windows, Troubleshooting, Hardware & Software</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-inner">
+            <img src="/static/Teemexlogo.png" alt="Teemex Logo" class="footer-logo">
+            <h2>Let's Work <span>Together</span></h2>
+            <a href="mailto:timileyinfiv@gmail.com" class="btn-primary">timileyinfiv@gmail.com</a>
+            <div class="footer-socials">
+                <a href="https://www.behance.net/timileyinmoses_157" target="_blank">Behance</a>
+                <a href="https://www.linkedin.com/in/moses-timileyin-044511269" target="_blank">LinkedIn</a>
+            </div>
+            <p class="footer-copy">© 2025 Teemex Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Mobile menu
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+
+        // Fetch bio
+        fetch('/api/bio')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('bio-data').innerHTML =
+                `${data.job} based in ${data.country}. Passionate about delivering high-quality digital experiences.`
+            })
+
+        // Fetch projects
+        fetch('/api/projects')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('projects-list').innerHTML =
+                data.map((p, i) => `
+                    <div class="project-card" style="animation-delay: ${i * 0.1}s">
+                        <div class="project-num">0${i + 1}</div>
+                        <h3>${p.title}</h3>
+                        <p>${p.description}</p>
+                        <a href="${p.link}" target="_blank">View Project <span>→</span></a>
+                    </div>
+                `).join('')
+            })
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(s => observer.observe(s));
+    </script>
+
+</body>
+</html>
