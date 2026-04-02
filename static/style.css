@@ -8,7 +8,7 @@
     --accent: #00E5FF;
     --accent2: #0a4d6e;
     --card: #0a0a0a;
-    --border: #151515;
+    --border: #222222;
 }
 
 html { scroll-behavior: smooth; }
@@ -269,7 +269,7 @@ nav {
 /* SECTIONS */
 section {
     padding: 8rem 6%;
-    border-top: 1px solid var(--border);
+    border-top: 2px solid var(--border);
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
@@ -329,7 +329,7 @@ section.visible {
 
 .stat-card {
     background: var(--card);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 16px;
     padding: 1.8rem;
     transition: border-color 0.3s;
@@ -361,7 +361,7 @@ section.visible {
 
 .project-card {
     background: var(--card);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 20px;
     padding: 2.5rem;
     transition: border-color 0.3s, transform 0.3s;
@@ -421,7 +421,7 @@ section.visible {
 
 .skill-card {
     background: var(--card);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 20px;
     padding: 2.5rem;
     transition: border-color 0.3s, transform 0.3s;
