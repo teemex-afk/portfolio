@@ -150,8 +150,7 @@
             .then(res => res.json())
             .then(data => {
                 document.getElementById('bio-data').innerHTML =
-                `${data.job} based in ${data.country}. Passionate about delivering high-quality digital experiences.`
-            })
+                `Backend Developer & CMS Specialist. Turning complex systems into seamless digital experiences.`;})
 
         // Fetch projects
         fetch('/api/projects')
