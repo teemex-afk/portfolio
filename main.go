@@ -44,8 +44,8 @@ func bio(w http.ResponseWriter, r *http.Request) {
 
 func projects(w http.ResponseWriter, r *http.Request) {
 	myProjects := []Project{
-		{Title: "Portfolio Website", Description: "My personal portfolio built with Go", Link: "https://github.com"},
-		{Title: "Bio API", Description: "A REST API built with Go", Link: "https://github.com"},
+		{Title: "Portfolio Website", Description: "My personal portfolio built with Go", Link: "https://github.com/teemex-afk/portfolio/"},
+		{Title: "Bio API", Description: "A REST API built with Go", Link: "https://github.com/teemex-afk/portfolio/"},
 		{Title: "Travels & Tour Website", Description: "Built a user-friendly tour showcase website for Moultontoursja.com in Jamaica with booking functionality using WordPress.", Link: "https://www.behance.net/timileyinmoses_157"},
 		{Title: "Online Store - Sonnies Collection", Description: "Built a full ecommerce store for a USA-based fashion brand using Shopify.", Link: "https://www.behance.net/timileyinmoses_157"},
 		{Title: "SrGlobe Content Management", Description: "Managed and built user-friendly websites for SrGlobe.UK using WordPress CMS.", Link: "https://www.linkedin.com/in/moses-timileyin-044511269"},
