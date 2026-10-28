@@ -1,181 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teemex Design | Timileyin Moses</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teemex Design | Timileyin Moses</title>
+<meta name="description" content="Timileyin Moses is a backend developer and CMS specialist building modern, high-performance web experiences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+<div id="progress"></div>
+<div id="glow"></div>
+<canvas id="bg"></canvas>
 
-    <div class="cursor"></div>
-    <div class="noise"></div>
+<header class="nav">
+  <a href="#home"><img src="/static/Teemex_logo_cp.jpg" alt="Teemex logo" class="logo-img"></a>
+  <nav class="links">
+    <a href="#home" class="on">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn ghost hire" href="#contact">Hire me</a>
+  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<div class="mobile" id="mobile">
+  <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+</div>
 
-    <!-- NAV -->
-    <nav>
-        <div class="nav-logo">
-            <img src="/static/Teemex_logo_cp.jpg" alt="Teemex Logo" class="logo-img">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </ul>
+<main>
+  <section id="home" class="hero">
+    <div>
+      <p class="badge">Available for work</p>
+      <p class="hi">Hello, I'm</p>
+      <h1>Timileyin <span class="acc">Moses</span></h1>
+      <h2 class="role"><span id="typed"></span><i class="caret"></i></h2>
+      <p class="lead">Turning complex systems into seamless digital experiences. I build modern, high-performance websites and backends.</p>
+      <div class="cta">
+        <a class="btn" href="https://www.behance.net/timileyinmoses_157" target="_blank" rel="noopener">View portfolio</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+      <p class="social">Find me on <a href="https://www.behance.net/timileyinmoses_157" target="_blank" rel="noopener">Behance</a> <a href="https://www.linkedin.com/in/moses-timileyin-044511269" target="_blank" rel="noopener">LinkedIn</a></p>
     </div>
+    <div class="art">
+      <div class="ring"></div>
+      <div class="photo"><img src="/static/Teemexdp.png" alt="Timileyin Moses"></div>
+      <div class="fc a"><b>5+</b>Years of experience</div>
+      <div class="fc b"><b>18+</b>Projects done</div>
+    </div>
+  </section>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-left">
-            <div class="available-badge">✦ Available for work</div>
-            <h2>Building Modern,<br><span>High-Performance</span><br>Web Experiences.</h2>
-            <p class="hero-sub" id="bio-data">Loading...</p>
-            <div class="hero-cta">
-                <a href="https://www.behance.net/timileyinmoses_157" target="_blank" class="btn-primary">View Portfolio</a>
-                <a href="#contact" class="btn-ghost">Get in Touch</a>
-            </div>
-        </div>
-        <div class="hero-right">
-            <div class="profile-wrap">
-                <img src="/static/Teemexdp.png" alt="Timileyin Moses" class="profile-img">
-                <div class="profile-glow"></div>
-            </div>
-        </div>
-    </section>
+  <div class="stats">
+    <div class="stat rv" data-count="5"><b>0+</b>Years of experience</div>
+    <div class="stat rv" data-count="18"><b>0+</b>Projects done</div>
+    <div class="stat rv" data-count="11"><b>0+</b>Happy clients</div>
+    <div class="stat rv" data-count="4"><b>0+</b>CMS platforms</div>
+  </div>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <div class="section-label">About Me</div>
-        <div class="about-grid">
-            <div class="about-text">
-                <h2>Crafting Digital <span>Experiences</span></h2>
-                <p>I'm an experienced customer service and telesales professional with years of experience in ecommerce, fintech and technology. Skilled in CMS platforms including WordPress, Shopify, Drupal and Concrete5, I combine creative vision with technical prowess to deliver compelling digital experiences.</p>
-            </div>
-            <div class="about-stats">
-                <div class="stat-card">
-                    <span class="stat-num">5+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-num">18+</span>
-                    <span class="stat-label">Projects Done</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-num">11+</span>
-                    <span class="stat-label">Happy Clients</span>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="marq"><div class="track">
+    <span>WordPress</span><span>Shopify</span><span>Drupal</span><span>Concrete5</span><span>Golang</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Photoshop</span><span>Canva</span><span>Git</span><span>Railway</span>
+  </div></div>
 
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-        <div class="section-label">Projects</div>
-        <h2 class="section-title">Selected <span>Work</span></h2>
-        <div id="projects-list" class="projects-grid">Loading...</div>
-    </section>
+  <section id="about" class="rv">
+    <h2>Crafting digital experiences</h2>
+    <p>I'm an experienced customer service and telesales professional with years of experience in ecommerce, fintech and technology. Skilled in CMS platforms including WordPress, Shopify, Drupal and Concrete5, I combine creative vision with technical skill to deliver compelling digital experiences.</p>
+  </section>
 
-    <!-- SKILLS -->
-    <section class="skills" id="skills">
-        <div class="section-label">Skills</div>
-        <h2 class="section-title">What I <span>Do</span></h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">🌐</div>
-                <h3>CMS Development</h3>
-                <p>WordPress, Shopify, Drupal, Concrete5</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🎨</div>
-                <h3>Graphics Design</h3>
-                <p>Adobe Photoshop, Canva, Poster Design</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">💻</div>
-                <h3>Web Development</h3>
-                <p>HTML, CSS, JavaScript, Golang</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🛠️</div>
-                <h3>IT Support</h3>
-                <p>Windows, Troubleshooting, Hardware & Software</p>
-            </div>
-        </div>
-    </section>
+  <section id="projects">
+    <h2>Selected work</h2>
+    <div id="projects-list" class="cards three"></div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer id="contact">
-        <div class="footer-inner">
-            <img src="/static/Teemex_logo_cp.jpg" alt="Teemex Logo" class="footer-logo">
-            <h2>Let's Work <span>Together</span></h2>
-            <a href="mailto:timileyinfiv@gmail.com" class="btn-primary">timileyinfiv@gmail.com</a>
-            <div class="footer-socials">
-                <a href="https://www.behance.net/timileyinmoses_157" target="_blank">Behance</a>
-                <a href="https://www.linkedin.com/in/moses-timileyin-044511269" target="_blank">LinkedIn</a>
-            </div>
-            <p class="footer-copy">© 2026 Teemex Designs. All rights reserved.</p>
-        </div>
-    </footer>
+  <section id="skills">
+    <h2>What I do</h2>
+    <div class="cards four">
+      <div class="card rv k1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3>CMS development</h3><p>WordPress, Shopify, Drupal, Concrete5</p></div>
+      <div class="card rv k4"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><h3>Graphics design</h3><p>Adobe Photoshop, Canva, poster design</p></div>
+      <div class="card rv k2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Web development</h3><p>HTML, CSS, JavaScript, Golang</p></div>
+      <div class="card rv k3"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>IT support</h3><p>Windows, troubleshooting, hardware and software</p></div>
+    </div>
+  </section>
 
-    <script>
-        // Custom cursor
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+  <section id="contact" class="contact rv">
+    <img src="/static/Teemex_logo_cp.jpg" alt="Teemex logo" class="logo-img big">
+    <h2>Let's work together</h2>
+    <a class="btn" href="mailto:timileyinfiv@gmail.com">timileyinfiv@gmail.com</a>
+  </section>
+</main>
 
-        // Mobile menu
-        function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('open');
-        }
-
-        // Fetch bio
-        fetch('/api/bio')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('bio-data').innerHTML =
-                `Backend Developer & CMS Specialist. Turning complex systems into seamless digital experiences.`;})
-
-        // Fetch projects
-        fetch('/api/projects')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('projects-list').innerHTML =
-                data.map((p, i) => `
-                    <div class="project-card" style="animation-delay: ${i * 0.1}s">
-                        <div class="project-num">0${i + 1}</div>
-                        <h3>${p.title}</h3>
-                        <p>${p.description}</p>
-                        <a href="${p.link}" target="_blank">View Project <span>→</span></a>
-                    </div>
-                `).join('')
-            })
-
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section').forEach(s => observer.observe(s));
-    </script>
-
+<footer>&copy; 2026 Teemex Designs. All rights reserved.</footer>
+<script src="/static/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+# secrets
+.env
+.env.*
+
+# build output
+*.exe
+/main
+
+# OS and editor files
+.DS_Store
+.vscode/
+.idea/

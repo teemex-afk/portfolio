@@ -3,7 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
+	"os"
 )
 
 type Bio struct {
@@ -21,13 +23,17 @@ type Project struct {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		http.NotFound(w, r)
+		return
+	}
 	http.ServeFile(w, r, "templates/index.html")
 }
 
 func bio(w http.ResponseWriter, r *http.Request) {
 	myBio := Bio{
 		Name:    "Timileyin Moses",
-		Age:     25,
+		Age:     26,
 		Country: "Nigeria",
 		Job:     "Backend Developer & CMS Specialist",
 		Email:   "timileyinfiv@gmail.com",
@@ -53,8 +59,14 @@ func main() {
 	http.HandleFunc("/", home)
 	http.HandleFunc("/api/bio", bio)
 	http.HandleFunc("/api/projects", projects)
-	fmt.Println("Server starting on port 8080...")
+
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
-	http.ListenAndServe(":8080", nil)
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	fmt.Println("Server starting on port " + port + "...")
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
